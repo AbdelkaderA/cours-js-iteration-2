@@ -18,7 +18,7 @@ let data = JSON.parse(rawfile);
   * une chaîne de caractères.
   */
 function demarrage(){
-    return "";
+    return "Bonjour";
 }
 
  /**
@@ -28,6 +28,10 @@ function demarrage(){
   * Elle retourne un objet javascript au format json.
   */
 function home(){
+    var undefined = {
+        Nom: ['Alain'],
+        Age: 32,
+    }
     return undefined;
 }
 
@@ -37,8 +41,8 @@ function home(){
   * Elle ne prend pas de paramètres.
   * Elle retourne un objet javascript contenant toutes les données.
   */
-function donnees(){
-    return {};
+function donnees(){    
+return data;
 }
 
  /**
@@ -50,7 +54,7 @@ function donnees(){
   * Cette liste sera contenu dans la clé communication
   */
 function comms(){
-    return {"communication":[]};
+    return {"communication":["wifi", "lorawan"]};
 }
 
 
@@ -63,7 +67,7 @@ function comms(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects(){
-    return {"objects":[]};
+    return {"objects":[objects]};
 }
 
  /**
