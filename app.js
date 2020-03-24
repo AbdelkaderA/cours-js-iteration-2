@@ -29,8 +29,7 @@ function demarrage(){
   */
 function home(){
     var undefined = {
-        Nom: ['Alain'],
-        Age: 32,
+        Nom: ['Alain']
     }
     return undefined;
 }
@@ -79,6 +78,7 @@ function objects(){
   * Cette liste sera contenu dans la clé types
   */
 function types(){
+    
     return undefined;
 }
 
