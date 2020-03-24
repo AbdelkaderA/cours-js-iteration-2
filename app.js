@@ -67,7 +67,7 @@ function comms(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects(){
-    return {"objects":[objects]};
+    return {"objects":data.objects};
 }
 
  /**
