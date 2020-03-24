@@ -54,7 +54,7 @@ return data;
   * Cette liste sera contenu dans la clé communication
   */
 function comms(){
-    return {"communication":["wifi", "lorawan"]};
+    return {"communication":data.communication};
 }
 
 
