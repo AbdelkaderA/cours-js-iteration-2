@@ -78,8 +78,12 @@ function objects(){
   * Cette liste sera contenu dans la clé types
   */
 function types(){
-    
-    return undefined;
+    var types = data.types;
+    var type = [];
+    for (var p in types) {
+        type.push(types[p]);
+    }
+    return { "types": type };                                                                                                              
 }
 
 /**
@@ -90,8 +94,13 @@ function types(){
  * des formats de donnnées existant et leur détail dans la base de données.
  * Cette liste sera contenu dans la clé formats.
  */
-function formats(){
-   return undefined;
+function formats(){    
+    var formats = data.data_formats;
+    var type = [];
+    for (var p in formats) {
+        type.push(formats[p]);
+    }
+    return { "formats": type };
 }
 
  /**
@@ -103,8 +112,14 @@ function formats(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects_serials(){
-    return {"objects":[]};
+    var objects_serials = data.objects;
+    var type = [];
+    for (var p in objects_serials){
+    type.push(objects_serials[p].serial);
+    }
+    return {"objects": type};    
 }
+
 
 /**
  * Cette fonction est exécutée lorsqu'on demande l'adresse
@@ -114,6 +129,7 @@ function objects_serials(){
  * l'objet ayant le serial passé en paramètre.
  */
 function get_object_by_serial(serial){
+    
     return serial;
 }
 
