@@ -28,10 +28,10 @@ function demarrage(){
   * Elle retourne un objet javascript au format json.
   */
 function home(){
-    var undefined = {
+    var info = {
         Nom: ['Alain']
     }
-    return undefined;
+    return info;
 }
 
  /**
