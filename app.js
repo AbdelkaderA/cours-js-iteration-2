@@ -28,7 +28,7 @@ function demarrage(){
   * Elle retourne un objet javascript au format json.
   */
 function home(){
-    var info = {
+    let info = {
     Prenom: ['Abdelkader']
     }
     return info;
@@ -78,9 +78,9 @@ function objects(){
   * Cette liste sera contenu dans la clé types
   */
 function types(){
-    var types = data.types;
-    var type = [];
-    for (var p in types) {
+    let types = data.types;
+    let type = [];
+    for (let p in types) {
         type.push(types[p]);
     }
     return { "types": type };                                                                                                              
@@ -95,9 +95,9 @@ function types(){
  * Cette liste sera contenu dans la clé formats.
  */
 function formats(){    
-    var formats = data.data_formats;
-    var type = [];
-    for (var p in formats) {
+    let formats = data.data_formats;
+    let type = [];
+    for (let p in formats) {
         type.push(formats[p]);
     }
     return { "formats": type };
@@ -112,9 +112,9 @@ function formats(){
   * Cette liste sera contenue dans la clé objects
   */
 function objects_serials(){
-    var objects_serials = data.objects;
-    var type = [];
-    for (var p in objects_serials){
+    let objects_serials = data.objects;
+    let type = [];
+    for (let p in objects_serials){
     type.push(objects_serials[p].serial);
     }
     return {"objects": type};    
