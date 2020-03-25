@@ -8,7 +8,7 @@
   * import de la bibliothèque fs et lecture du fichier data.json.
   */
 const fs = require('fs');
-const rawfile=fs.readFileSync('data/data.json');
+const rawfile = fs.readFileSync('data/data.json');
 let data = JSON.parse(rawfile);
 
 
@@ -17,7 +17,7 @@ let data = JSON.parse(rawfile);
   * elle ne prend pas de paramètres et retourne
   * une chaîne de caractères.
   */
-function demarrage(){
+function demarrage() {
     return "Bonjour";
 }
 
@@ -27,9 +27,9 @@ function demarrage(){
   * Elle ne prend pas de paramètres 
   * Elle retourne un objet javascript au format json.
   */
-function home(){
+function home() {
     let info = {
-    Prenom: ['Abdelkader']
+        Prenom: ['Abdelkader']
     }
     return info;
 }
@@ -40,8 +40,8 @@ function home(){
   * Elle ne prend pas de paramètres.
   * Elle retourne un objet javascript contenant toutes les données.
   */
-function donnees(){    
-return data;
+function donnees() {
+    return data;
 }
 
  /**
@@ -52,8 +52,8 @@ return data;
   * de tous les modes de communications de la base de données.
   * Cette liste sera contenu dans la clé communication
   */
-function comms(){
-    return {"communication":data.communication};
+function comms() {
+    return { "communication": data.communication };
 }
 
 
@@ -65,8 +65,8 @@ function comms(){
   * de tous les objets de la base de données.
   * Cette liste sera contenue dans la clé objects
   */
-function objects(){
-    return {"objects":data.objects};
+function objects() {
+    return { "objects": data.objects };
 }
 
  /**
@@ -77,13 +77,13 @@ function objects(){
   * des types existant et leur détail dans la base de données.
   * Cette liste sera contenu dans la clé types
   */
-function types(){
+function types() {
     let types = data.types;
     let type = [];
     for (let p in types) {
         type.push(types[p]);
     }
-    return { "types": type };                                                                                                              
+    return { "types": type };
 }
 
 /**
@@ -94,7 +94,7 @@ function types(){
  * des formats de donnnées existant et leur détail dans la base de données.
  * Cette liste sera contenu dans la clé formats.
  */
-function formats(){    
+function formats() {
     let formats = data.data_formats;
     let type = [];
     for (let p in formats) {
@@ -111,13 +111,13 @@ function formats(){
   * de tous les numéros de série des objets de la base de données.
   * Cette liste sera contenue dans la clé objects
   */
-function objects_serials(){
+function objects_serials() {
     let objects_serials = data.objects;
     let type = [];
-    for (let p in objects_serials){
-    type.push(objects_serials[p].serial);
+    for (let p in objects_serials) {
+        type.push(objects_serials[p].serial);
     }
-    return {"objects": type};    
+    return { "objects": type };
 }
 
 
@@ -128,9 +128,13 @@ function objects_serials(){
  * Elle retourne un objet javascript contenant seulement
  * l'objet ayant le serial passé en paramètre.
  */
-function get_object_by_serial(serial){
-    
-    return serial;
+function get_object_by_serial(serial) {
+    let object = data.objects;
+    for (p = 0; p < object.length; p++) {
+        if (object[p].serial == serial) {
+            return object[p];
+        }
+    }
 }
 
 /**
@@ -140,8 +144,18 @@ function get_object_by_serial(serial){
  * Elle retourne un objet javascript contenant une
  * liste des objets ayant l'opérateur passé en paramètre.
  */
-function get_objects_by_operator(operator){
-    return operator;
+function get_objects_by_operator(operator) {
+    let object = data.objects;
+    let liste = [];
+    for (p = 0; p < object.length; p++) {
+        if (object[p].provisionning.operator === operator) {
+            liste.push(object[p]);
+        }
+    }
+    if (liste.length == 0) {
+        return undefined
+    }
+    return { "objects": liste };
 }
 
 /**
@@ -151,7 +165,7 @@ function get_objects_by_operator(operator){
  * Elle retourne un objet javascript contenant une liste de types
  * ayant pour mode de communication celui passé en paramètre.
  */
-function get_types_by_comm(comm){
+function get_types_by_comm(comm) {
     return comm;
 }
 
