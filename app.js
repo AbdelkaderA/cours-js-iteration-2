@@ -187,7 +187,7 @@ function get_types_by_comm(comm) {
  * Elle retourne un objet javascript contenant une liste de types
  * ayant pour un format de données celui passé en paramètre.
  */
-function get_types_by_format(format){    
+function get_types_by_format(format){
     return format;
 }
 
