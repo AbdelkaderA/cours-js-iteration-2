@@ -166,7 +166,18 @@ function get_objects_by_operator(operator) {
  * ayant pour mode de communication celui passé en paramètre.
  */
 function get_types_by_comm(comm) {
-    return comm;
+    let type = data.types;
+    let liste = [];
+    for (p in type) {
+        if (type[p].communication === comm) {
+            liste.push(type[p].communication);
+        }
+    }
+    if (liste.length == 0) {
+        return undefined
+    }
+    return { "types": liste };
+
 }
 
 /**
@@ -176,7 +187,7 @@ function get_types_by_comm(comm) {
  * Elle retourne un objet javascript contenant une liste de types
  * ayant pour un format de données celui passé en paramètre.
  */
-function get_types_by_format(format){
+function get_types_by_format(format){    
     return format;
 }
 
