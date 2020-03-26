@@ -86,7 +86,7 @@
         <div class="content-wrapper bg-secondary" id="content">
             <section class="content-header">
                 <div class="container-fluid text-dark font-weight-bold font-italic">
-                    <h1 id="content_title">Gestion des objets</h1>
+                    <h1 class="border text-center rounded border-dark" id="content_title">Gestion des objets</h1>
                 </div>
             </section>
 
@@ -96,17 +96,31 @@
                         <!-- general form elements -->
                         <div class="card card-secondary">
                             <div class="card-header bg-dark ">
-                                <h3 class="box-title text-info">Liste des objets</h3>
+                                <h3 class="box-title text-info">Liste des objets :</h3>
                             </div>
                             <div class="card-body bg-dark">
                                 <table id="objects_table" class="table table-bordered bg-secondary">
                                     <thead>
                                         <tr>
-                                            <th class="text-dark" style="width: 100px">N° Série :</th>
-                                            <th class="text-dark" >Image</th>
-                                            <th class="text-dark" >Description</th>
-                                            <th class="text-dark" style="width: 100px">Statut</th>
-                                            <th class="text-dark" style="width: 100px">Action</th>
+                                            <th class="text-dark text-center" style="width: 100px"><ins>N° Série :</ins></th>
+                                            <th class="text-dark text-center" ><ins>Image</th></ins>
+                                            <th class="text-dark text-center" ><ins>Description</ins></th>
+                                            <th class="text-dark text-center" style="width: 100px"><ins>Statut</ins></th>
+                                            <th class="text-dark text-center" style="width: 100px"><ins>Action</ins></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center" style="width: 100px"> OBJ_001 </th>
+                                            <th class="text-center">Photo du produit 1</th>
+                                            <th class="text-center">Description du produit 1</th>
+                                            <th class="text-center" style="width: 100px"><input type ="checkbox"></th>
+                                            <th><button type="button" class="text-center btn btn-outline-info">Détails</button></th>
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center" style="width: 100px"> OBJ_002 </th>
+                                            <th class="text-center">Photo du produit 2</th>
+                                            <th class="text-center">Description du produit 2</th>
+                                            <th class="text-center" style="width: 100px"><input type ="checkbox"></th>
+                                            <th><button type="button" class="text-center btn btn-outline-info">Détails</button></th>
                                         </tr>
                                     </thead>
                                     <tbody id="table_body">
