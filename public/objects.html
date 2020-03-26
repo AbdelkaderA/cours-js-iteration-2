@@ -29,7 +29,7 @@
 
     <div class="wrapper" id="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-red navbar-light" id="nav">
+        <nav class="main-header navbar navbar-expand navbar-info navbar-light" id="nav">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -39,12 +39,12 @@
         </nav>
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4 " id="side">
+        <aside class="main-sidebar bg-dark elevation-4 " id="side">
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
                 <img src="/static/images/le-campus.jpg" alt="Logo Campus" class="brand-image elevation-3"
                     style="opacity: .9; background-color: white;">
-                <span class="brand-text font-weight-light">IoT Chambéry</span>
+                <span class="brand-text font-weight-light text-info font-weight-bold font-italic">IOT CHAMBERY</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
@@ -83,30 +83,30 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" id="content">
+        <div class="content-wrapper bg-secondary" id="content">
             <section class="content-header">
-                <div class="container-fluid">
-                    <h1 id="content_title">Gestion du parc d'objets</h1>
+                <div class="container-fluid text-dark font-weight-bold font-italic">
+                    <h1 id="content_title">Gestion des objets</h1>
                 </div>
             </section>
 
-            <div class="content" id="content_div">
+            <div class="content text-info" id="content_div">
                 <div class="row">
                     <div class="col-md-12">
                         <!-- general form elements -->
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="box-title">Liste des objets</h3>
+                        <div class="card card-secondary">
+                            <div class="card-header bg-dark ">
+                                <h3 class="box-title text-info">Liste des objets</h3>
                             </div>
-                            <div class="card-body">
-                                <table id="objects_table" class="table table-bordered">
+                            <div class="card-body bg-dark">
+                                <table id="objects_table" class="table table-bordered bg-secondary">
                                     <thead>
                                         <tr>
-                                            <th style="width: 100px">N° Série :</th>
-                                            <th>Image</th>
-                                            <th>Description</th>
-                                            <th style="width: 100px">Statut</th>
-                                            <th style="width: 100px">Action</th>
+                                            <th class="text-dark" style="width: 100px">N° Série :</th>
+                                            <th class="text-dark" >Image</th>
+                                            <th class="text-dark" >Description</th>
+                                            <th class="text-dark" style="width: 100px">Statut</th>
+                                            <th class="text-dark" style="width: 100px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="table_body">
@@ -150,10 +150,11 @@
         </aside>
 
         <!-- Main Footer -->
-        <footer class="main-footer" id="footer">
-            <strong>Copyright &copy; 2020 <a href="https://www.le-campus-numerique.fr/">Le Campus Numérique in the
-                    Alps</a>.</strong> All rights reserved.
-            <div class="loat-right d-none d-sm-inline-block">
+        <footer class="main-footer bg-dark" id="footer">
+            <strong class="text-info">Copyright &copy; 2020 <a href="https://www.le-campus-numerique.fr/">Le Campus Numérique in the
+                    Alps</a>.</strong>
+                    <strong class="text-info">All rights reserved.</strong>
+            <div class="loat-right d-none d-sm-inline-block text-info">
                 <b>Version</b> 1.0.0
             </div>
         </footer>

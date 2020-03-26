@@ -256,7 +256,7 @@ app.get('/types/format/:format', route(get_types_by_format));
 function route(fun){
     return function(req, res){
         if( Object.keys(req.params).length!==0 ){
-            res.send(fun(req.params));
+            res.json(fun(Object.values(req.params)[0]));
         }
         return res.send(fun());
     }
