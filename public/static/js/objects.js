@@ -12,6 +12,7 @@ function load_components() {
             add_line_to_table(p)
         }
     });
+    console.log("Load components est lancé. Traitement des données en cours");
 }
 load_components();
 
@@ -23,14 +24,29 @@ function add_line_to_table(data) {
     //else {
     //    return "";
     //}
+
+    /**
+     * A faire pour remplir la ligne :
+     * 1. tester si l'image est présente
+     * 2. si l'image n'existe pas, appeler la fonction load_default_image
+     * 3. créer une fonction load_default_image
+     * 4. appelez l'API pour récupérer le type de l'objet contenant default_image
+     * 5. retrouvez l'élément contenant l'image
+     * 6. mettez à jour l'image avec default_image
+     */
+
+    if(data.image){
+        load_default_image(data);
+    }
+
     let ligne =
         '<tr>\
-    <th class="text-center align-text-bottom" >'+ data.serial + '</th>\
-    <th class="text-center"><img style="max-width:150px; heigth:auto;" src=" static/images/' + data.image + '"></th>\
-    <th class="text-center align-text-bottom">'+ data.description + '</th>\
-    <th class="text-center align-text-bottom" style="width: 100px"><input type ="checkbox" '+check(data)+'></th>\
-    <th><button type="button" class="text-center btn btn-outline-info">Détails</button></th>\
-    </tr>';
+            <th class="text-center align-text-bottom" >'+ data.serial + '</th>\
+            <th class="text-center"><img style="max-width:150px; heigth:auto;" src=" static/images/' + data.image + '"></th>\
+            <th class="text-center align-text-bottom">'+ data.description + '</th>\
+            <th class="text-center align-text-bottom" style="width: 100px"><input type ="checkbox" '+check(data)+'></th>\
+            <th><button type="button" class="text-center btn btn-outline-info">Détails</button></th>\
+        </tr>';
     document.getElementById('table_body').innerHTML += ligne
 
     /**$('table_body').apend(ligne)*/
@@ -49,4 +65,26 @@ function check(data){
 function rafraichir(){
     document.getElementById('table_body').innerHTML="";
     load_components();
+}
+
+function load_default_image(data) {
+    for (let p of document.getElementById('objects_table').childNodes) {
+        if (p.nodeName == 'TBODY') {
+            for (let i of p.childNodes) {
+                if (i.nodeName == 'TR') {
+                    if (i.childNodes[1].childNodes[0].textContent == data.serial) {
+                        i.childNodes[3].childNodes[0].setAttribute('src', '/static/images/' + data.default_image);;
+                    }
+                }
+            }
+        }
+    }
+}
+function default_image() {
+    $.get("/types", function (data) {
+        for (let p of data.types) {
+            add_line_to_table(p)
+        }
+    });
+    console.log();
 }
