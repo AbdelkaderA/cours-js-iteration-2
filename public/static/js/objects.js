@@ -79,3 +79,4 @@ function load_default_image(data_objects) {
         }
     });
 }
+//$('th:contains:(' + data_objects.serial + ')').next().children().attr('src', '/static/images/' + default_image);
