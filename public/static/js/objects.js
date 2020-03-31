@@ -41,15 +41,13 @@ function add_line_to_table(data) {
 
     let ligne =
         '<tr>\
-            <th class="text-center align-text-bottom" >'+ data.serial + '</th>\
-            <th class="text-center"><img style="max-width:150px; heigth:auto;" src=" static/images/' + data.image + '"></th>\
-            <th class="text-center align-text-bottom">'+ data.description + '</th>\
-            <th class="text-center align-text-bottom" style="width: 100px"><input type ="checkbox" '+check(data)+'></th>\
+            <th class="text-center align-text-bottom" >'+ data.serial +'</th>\
+            <th class="text-center"><img style="max-width:150px; heigth:auto;" src=" static/images/'+ data.image +'"></th>\
+            <th class="text-center align-text-bottom">'+ data.description +'</th>\
+            <th class="text-center align-text-bottom" style="width: 100px"><input type ="checkbox" '+ check(data) +'></th>\
             <th><button type="button" class="text-center btn btn-outline-info">Détails</button></th>\
         </tr>';
     document.getElementById('table_body').innerHTML += ligne
-
-    /**$('table_body').apend(ligne)*/
 }
 
 function check(data){
