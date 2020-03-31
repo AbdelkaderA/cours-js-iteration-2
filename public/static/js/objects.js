@@ -6,13 +6,13 @@
  *    - charger les données des objets dans la table
  */
 function load_components() {
-    console.log("Chargement des données de la page");// Ajouter ici le code permettant de charger dynamiquement les éléments de la page
+    //console.log("Chargement des données de la page");// Ajouter ici le code permettant de charger dynamiquement les éléments de la page
     $.get("/objects", function (data) {
         for (let p of data.objects) {
             add_line_to_table(p)
         }
     });
-    console.log("Load components est lancé. Traitement des données en cours");
+    //console.log("Load components est lancé. Traitement des données en cours");
 }
 load_components();
 
@@ -35,7 +35,7 @@ function add_line_to_table(data) {
      * 6. mettez à jour l'image avec default_image
      */
 
-    if(data.image){
+    if(!data.image){
         load_default_image(data);
     }
 
@@ -67,24 +67,17 @@ function rafraichir(){
     load_components();
 }
 
-function load_default_image(data) {
-    for (let p of document.getElementById('objects_table').childNodes) {
-        if (p.nodeName == 'TBODY') {
-            for (let i of p.childNodes) {
-                if (i.nodeName == 'TR') {
-                    if (i.childNodes[1].childNodes[0].textContent == data.serial) {
-                        i.childNodes[3].childNodes[0].setAttribute('src', '/static/images/' + data.default_image);;
-                    }
+function load_default_image(data_objects) {
+    $.get("/data", function (data) {
+        //console.log(data);
+        //console.log(data_objects);
+        for (let p of document.getElementById('table_body').childNodes) {
+            if (p.nodeName == 'TR') {
+                if (p.childNodes[1].childNodes[0].textContent == data_objects.serial) {
+                    p.childNodes[3].childNodes[0].setAttribute('src', '/static/images/' + data.types.Digital_CO2.default_image);;
+                    //console.log(data.default_image);
                 }
             }
         }
-    }
-}
-function default_image() {
-    $.get("/types", function (data) {
-        for (let p of data.types) {
-            add_line_to_table(p)
-        }
     });
-    console.log();
 }
