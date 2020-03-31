@@ -74,7 +74,7 @@ function load_default_image(data_objects) {
         for (let p of document.getElementById('table_body').childNodes) {
             if (p.nodeName == 'TR') {
                 if (p.childNodes[1].childNodes[0].textContent == data_objects.serial) {
-                    p.childNodes[3].childNodes[0].setAttribute('src', '/static/images/' + data.types.Digital_CO2.default_image);;
+                    p.childNodes[3].childNodes[0].setAttribute('src', '/static/images/' + data.types[data_objects.type].default_image );;
                     //console.log(data.default_image);
                 }
             }
